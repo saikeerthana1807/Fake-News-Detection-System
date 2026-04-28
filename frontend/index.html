@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detection System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace">
+      <div class="intro">
+        <p class="eyebrow">DTI Project</p>
+        <h1>Fake News Detection System</h1>
+        <p class="summary">Paste a headline and article body to check whether the content is likely fake or real.</p>
+      </div>
+
+      <form id="newsForm" class="checker">
+        <label for="title">News Title</label>
+        <input id="title" name="title" type="text" placeholder="Enter the headline" required>
+
+        <label for="content">News Content</label>
+        <textarea id="content" name="content" rows="10" placeholder="Paste the full news article here" required></textarea>
+
+        <button type="submit">Analyze News</button>
+      </form>
+    </section>
+
+    <aside class="result-panel">
+      <div class="status-card">
+        <span id="backendStatus" class="status-dot">Checking backend...</span>
+      </div>
+
+      <div id="resultCard" class="result-card hidden">
+        <p class="eyebrow">Prediction</p>
+        <h2 id="predictionLabel">-</h2>
+        <div class="meter">
+          <span id="confidenceBar"></span>
+        </div>
+        <p id="confidenceText">Confidence: -</p>
+        <div class="probabilities">
+          <p><strong>Fake:</strong> <span id="fakeProb">-</span></p>
+          <p><strong>Real:</strong> <span id="realProb">-</span></p>
+        </div>
+        <div>
+          <p class="mini-title">Evidence Words</p>
+          <div id="evidenceWords" class="tags"></div>
+        </div>
+      </div>
+
+      <div class="history-card">
+        <div class="history-header">
+          <h2>Recent Checks</h2>
+          <button id="refreshHistory" type="button">Refresh</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

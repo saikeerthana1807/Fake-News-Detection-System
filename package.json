@@ -1,0 +1,8 @@
+{
+  "name": "fake-news-detection-system",
+  "version": "1.0.0",
+  "description": " fake news detection system for DTI project",
+  "scripts": {
+    "build": "echo \"Static frontend ready\""
+  }
+}
